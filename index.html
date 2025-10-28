@@ -116,7 +116,7 @@
             transition: all 0.3s ease;
             border-left: 5px solid #667eea;
             display: grid;
-            grid-template-columns: auto 1fr auto;
+            grid-template-columns: 200px 1fr auto;
             gap: 20px;
             align-items: center;
         }
@@ -127,22 +127,45 @@
         }
 
         .report-date {
-            text-align: center;
-            padding: 15px;
+            padding: 20px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             border-radius: 8px;
             color: white;
-            min-width: 120px;
+            min-width: 200px;
         }
 
         .report-date-day {
-            font-size: 2em;
+            font-size: 1.2em;
             font-weight: 700;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
         }
 
-        .report-date-month {
-            font-size: 0.9em;
-            opacity: 0.9;
+        .company-list {
+            font-size: 0.85em;
+            line-height: 1.8;
+            opacity: 0.95;
+            max-height: 150px;
+            overflow-y: auto;
+        }
+
+        .company-list::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .company-list::-webkit-scrollbar-track {
+            background: rgba(255,255,255,0.1);
+            border-radius: 2px;
+        }
+
+        .company-list::-webkit-scrollbar-thumb {
+            background: rgba(255,255,255,0.4);
+            border-radius: 2px;
+        }
+
+        .company-item {
+            padding: 2px 0;
         }
 
         .report-info {
@@ -234,7 +257,7 @@
                 <div class="stat-label">📊 총 분석 보고서</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number">49</div>
+                <div class="stat-number">22</div>
                 <div class="stat-label">🏢 분석된 기업</div>
             </div>
             <div class="stat-card">
@@ -251,16 +274,27 @@
         <!-- 보고서 목록 -->
         <div class="reports-grid" id="reportsList">
 
-            <div class="report-card" data-search="2025년 10월 26일 13:36:01 신규10곳_시멘트제지 뉴에너지 이온히팅 투자기업 분석 보고서 - 신규10곳 시멘트제지">
+            <div class="report-card" data-search="2025년 10월 26일 신규10곳_시멘트제지 뉴에너지 이온히팅 투자기업 분석 보고서 - 신규10곳 시멘트제지 세경하이테크 동양철관 한국철강 성신양회 삼표시멘트 아세아시멘트 한일현대시멘트 한솔제지 국일제지 아세아제지">
                 <div class="report-date">
-                    <div class="report-date-month">10월 26일</div>
-                    <div class="report-date-day">13:36:01</div>
+                    <div class="report-date-day">2025년 10월 26일</div>
+                    <div class="company-list">
+<div class="company-item">• 세경하이테크</div>
+<div class="company-item">• 동양철관</div>
+<div class="company-item">• 한국철강</div>
+<div class="company-item">• 성신양회</div>
+<div class="company-item">• 삼표시멘트</div>
+<div class="company-item">• 아세아시멘트</div>
+<div class="company-item">• 한일현대시멘트</div>
+<div class="company-item">• 한솔제지</div>
+<div class="company-item">• 국일제지</div>
+<div class="company-item">• 아세아제지</div>
+                    </div>
                 </div>
                 <div class="report-info">
                     <div class="report-title">뉴에너지 이온히팅 투자기업 분석 보고서 - 신규10곳 시멘트제지</div>
                     <div class="report-meta">
-                        📅 2025년 10월 26일 13:36:01
-                        <span class="report-badge">🏢 0개 기업</span>
+                        📅 2025년 10월 26일
+                        <span class="report-badge">🏢 10개 기업</span>
                         <span class="report-badge">📂 신규10곳_시멘트제지</span>
                     </div>
                 </div>
@@ -269,16 +303,19 @@
                 </div>
             </div>
 
-            <div class="report-card" data-search="2025년 10월 26일 13:20:43 신규2곳_오산화성지역 뉴에너지 이온히팅 투자기업 분석 보고서 - 신규2곳 오산화성지역">
+            <div class="report-card" data-search="2025년 10월 26일 신규2곳_오산화성지역 뉴에너지 이온히팅 투자기업 분석 보고서 - 신규2곳 오산화성지역 우진 디아이티">
                 <div class="report-date">
-                    <div class="report-date-month">10월 26일</div>
-                    <div class="report-date-day">13:20:43</div>
+                    <div class="report-date-day">2025년 10월 26일</div>
+                    <div class="company-list">
+<div class="company-item">• 우진</div>
+<div class="company-item">• 디아이티</div>
+                    </div>
                 </div>
                 <div class="report-info">
                     <div class="report-title">뉴에너지 이온히팅 투자기업 분석 보고서 - 신규2곳 오산화성지역</div>
                     <div class="report-meta">
-                        📅 2025년 10월 26일 13:20:43
-                        <span class="report-badge">🏢 0개 기업</span>
+                        📅 2025년 10월 26일
+                        <span class="report-badge">🏢 2개 기업</span>
                         <span class="report-badge">📂 신규2곳_오산화성지역</span>
                     </div>
                 </div>
@@ -287,16 +324,18 @@
                 </div>
             </div>
 
-            <div class="report-card" data-search="2025년 10월 25일 10:11:36 신규9곳_매출장기정체 뉴에너지 이온히팅 투자기업 분석 보고서 - 신규9곳 매출장기정체">
+            <div class="report-card" data-search="2025년 10월 25일 신규9곳_매출장기정체 뉴에너지 이온히팅 투자기업 분석 보고서 - 신규9곳 매출장기정체 ">
                 <div class="report-date">
-                    <div class="report-date-month">10월 25일</div>
-                    <div class="report-date-day">10:11:36</div>
+                    <div class="report-date-day">2025년 10월 25일</div>
+                    <div class="company-list">
+
+                    </div>
                 </div>
                 <div class="report-info">
                     <div class="report-title">뉴에너지 이온히팅 투자기업 분석 보고서 - 신규9곳 매출장기정체</div>
                     <div class="report-meta">
-                        📅 2025년 10월 25일 10:11:36
-                        <span class="report-badge">🏢 9개 기업</span>
+                        📅 2025년 10월 25일
+                        <span class="report-badge">🏢 0개 기업</span>
                         <span class="report-badge">📂 신규9곳_매출장기정체</span>
                     </div>
                 </div>
@@ -305,16 +344,18 @@
                 </div>
             </div>
 
-            <div class="report-card" data-search="2025년 10월 25일 09:42:25 신규10곳_스마트팜양식장 뉴에너지 이온히팅 투자기업 분석 보고서 - 신규10곳 스마트팜양식장">
+            <div class="report-card" data-search="2025년 10월 25일 신규10곳_스마트팜양식장 뉴에너지 이온히팅 투자기업 분석 보고서 - 신규10곳 스마트팜양식장 ">
                 <div class="report-date">
-                    <div class="report-date-month">10월 25일</div>
-                    <div class="report-date-day">09:42:25</div>
+                    <div class="report-date-day">2025년 10월 25일</div>
+                    <div class="company-list">
+
+                    </div>
                 </div>
                 <div class="report-info">
                     <div class="report-title">뉴에너지 이온히팅 투자기업 분석 보고서 - 신규10곳 스마트팜양식장</div>
                     <div class="report-meta">
-                        📅 2025년 10월 25일 09:42:25
-                        <span class="report-badge">🏢 10개 기업</span>
+                        📅 2025년 10월 25일
+                        <span class="report-badge">🏢 0개 기업</span>
                         <span class="report-badge">📂 신규10곳_스마트팜양식장</span>
                     </div>
                 </div>
@@ -323,16 +364,18 @@
                 </div>
             </div>
 
-            <div class="report-card" data-search="2025년 10월 25일 09:32:47 신규10곳_전자부품자동차 뉴에너지 이온히팅 투자기업 분석 보고서 - 신규10곳 전자부품자동차">
+            <div class="report-card" data-search="2025년 10월 25일 신규10곳_전자부품자동차 뉴에너지 이온히팅 투자기업 분석 보고서 - 신규10곳 전자부품자동차 ">
                 <div class="report-date">
-                    <div class="report-date-month">10월 25일</div>
-                    <div class="report-date-day">09:32:47</div>
+                    <div class="report-date-day">2025년 10월 25일</div>
+                    <div class="company-list">
+
+                    </div>
                 </div>
                 <div class="report-info">
                     <div class="report-title">뉴에너지 이온히팅 투자기업 분석 보고서 - 신규10곳 전자부품자동차</div>
                     <div class="report-meta">
-                        📅 2025년 10월 25일 09:32:47
-                        <span class="report-badge">🏢 10개 기업</span>
+                        📅 2025년 10월 25일
+                        <span class="report-badge">🏢 0개 기업</span>
                         <span class="report-badge">📂 신규10곳_전자부품자동차</span>
                     </div>
                 </div>
@@ -341,15 +384,26 @@
                 </div>
             </div>
 
-            <div class="report-card" data-search="2025년 10월 25일 08:47:44 신규9곳_자동차부품가전 뉴에너지 이온히팅 투자기업 분석 보고서 - 신규9곳 자동차부품가전">
+            <div class="report-card" data-search="2025년 10월 25일 신규9곳_자동차부품가전 뉴에너지 이온히팅 투자기업 분석 보고서 - 신규9곳 자동차부품가전 한온시스템 서연이화 만도 현대위아 평화정공 대동기어 대유위니아 한국단자 삼화콘덴서 쌍용C&E">
                 <div class="report-date">
-                    <div class="report-date-month">10월 25일</div>
-                    <div class="report-date-day">08:47:44</div>
+                    <div class="report-date-day">2025년 10월 25일</div>
+                    <div class="company-list">
+<div class="company-item">• 한온시스템</div>
+<div class="company-item">• 서연이화</div>
+<div class="company-item">• 만도</div>
+<div class="company-item">• 현대위아</div>
+<div class="company-item">• 평화정공</div>
+<div class="company-item">• 대동기어</div>
+<div class="company-item">• 대유위니아</div>
+<div class="company-item">• 한국단자</div>
+<div class="company-item">• 삼화콘덴서</div>
+<div class="company-item">• 쌍용C&E</div>
+                    </div>
                 </div>
                 <div class="report-info">
                     <div class="report-title">뉴에너지 이온히팅 투자기업 분석 보고서 - 신규9곳 자동차부품가전</div>
                     <div class="report-meta">
-                        📅 2025년 10월 25일 08:47:44
+                        📅 2025년 10월 25일
                         <span class="report-badge">🏢 10개 기업</span>
                         <span class="report-badge">📂 신규9곳_자동차부품가전</span>
                     </div>
@@ -359,16 +413,18 @@
                 </div>
             </div>
 
-            <div class="report-card" data-search="2025년 10월 25일 01:08:36 신규10곳_전자부품자동차부품 뉴에너지 이온히팅 투자기업 분석 보고서 - 신규10곳 전자부품자동차부품">
+            <div class="report-card" data-search="2025년 10월 25일 신규10곳_전자부품자동차부품 뉴에너지 이온히팅 투자기업 분석 보고서 - 신규10곳 전자부품자동차부품 ">
                 <div class="report-date">
-                    <div class="report-date-month">10월 25일</div>
-                    <div class="report-date-day">01:08:36</div>
+                    <div class="report-date-day">2025년 10월 25일</div>
+                    <div class="company-list">
+
+                    </div>
                 </div>
                 <div class="report-info">
                     <div class="report-title">뉴에너지 이온히팅 투자기업 분석 보고서 - 신규10곳 전자부품자동차부품</div>
                     <div class="report-meta">
-                        📅 2025년 10월 25일 01:08:36
-                        <span class="report-badge">🏢 10개 기업</span>
+                        📅 2025년 10월 25일
+                        <span class="report-badge">🏢 0개 기업</span>
                         <span class="report-badge">📂 신규10곳_전자부품자동차부품</span>
                     </div>
                 </div>
@@ -386,7 +442,7 @@
 
     <div class="footer">
         <p><strong>뉴에너지(주) 이온히팅 시스템 투자 분석</strong></p>
-        <p>마지막 업데이트: 2025년 10월 28일 13:43</p>
+        <p>마지막 업데이트: 2025년 10월 28일 15:14</p>
     </div>
 
     <script>

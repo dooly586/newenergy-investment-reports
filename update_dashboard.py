@@ -31,14 +31,39 @@ for html_file in html_files:
         date_obj = datetime.strptime(date_str, '%Y%m%d')
         time_obj = datetime.strptime(time_str, '%H%M%S')
 
-        # HTML 파일에서 회사 수 추출
+        # HTML 파일에서 회사 정보 추출
         with open(file_path, 'r', encoding='utf-8') as f:
             content = f.read()
             soup = BeautifulSoup(content, 'html.parser')
 
-            # 회사 카드 수 세기
-            company_cards = soup.find_all('div', class_='company-card')
-            company_count = len(company_cards)
+            company_names = []
+
+            # 패턴 1: h2 태그 (테이블 형식 HTML)
+            h2_tags = soup.find_all('h2')
+            for h2 in h2_tags:
+                text = h2.get_text(strip=True)
+                # "1. 회사명" 형식에서 회사명만 추출
+                company_match = re.match(r'\d+\.\s*(.+)', text)
+                if company_match:
+                    company_name = company_match.group(1).strip()
+                    # 🔗 링크 아이콘 및 괄호 정리
+                    company_name = company_name.replace('🔗', '').strip()
+                    # 괄호 제거 (예: "우진 (Woojin)" -> "우진")
+                    company_name = re.sub(r'\s*\([^)]*\)', '', company_name).strip()
+                    company_names.append(company_name)
+
+            # 패턴 2: company-name 클래스 (카드 형식 HTML)
+            if not company_names:
+                company_name_divs = soup.find_all('div', class_='company-name')
+                for div in company_name_divs:
+                    text = div.get_text(strip=True)
+                    # "1. 회사명 (종목코드)" 형식에서 회사명만 추출
+                    company_match = re.match(r'\d+\.\s*([^\(]+)', text)
+                    if company_match:
+                        company_name = company_match.group(1).strip()
+                        company_names.append(company_name)
+
+            company_count = len(company_names)
 
             # 타이틀 추출
             title_tag = soup.find('title')
@@ -50,6 +75,7 @@ for html_file in html_files:
             'time': time_obj.strftime('%H:%M:%S'),
             'category': category,
             'company_count': company_count,
+            'company_names': company_names,  # 회사 이름 목록 추가
             'title': title,
             'date_sort': date_str + time_str
         })
@@ -186,7 +212,7 @@ html_content = f'''<!DOCTYPE html>
             transition: all 0.3s ease;
             border-left: 5px solid #667eea;
             display: grid;
-            grid-template-columns: auto 1fr auto;
+            grid-template-columns: 200px 1fr auto;
             gap: 20px;
             align-items: center;
         }}
@@ -197,22 +223,45 @@ html_content = f'''<!DOCTYPE html>
         }}
 
         .report-date {{
-            text-align: center;
-            padding: 15px;
+            padding: 20px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             border-radius: 8px;
             color: white;
-            min-width: 120px;
+            min-width: 200px;
         }}
 
         .report-date-day {{
-            font-size: 2em;
+            font-size: 1.2em;
             font-weight: 700;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
         }}
 
-        .report-date-month {{
-            font-size: 0.9em;
-            opacity: 0.9;
+        .company-list {{
+            font-size: 0.85em;
+            line-height: 1.8;
+            opacity: 0.95;
+            max-height: 150px;
+            overflow-y: auto;
+        }}
+
+        .company-list::-webkit-scrollbar {{
+            width: 4px;
+        }}
+
+        .company-list::-webkit-scrollbar-track {{
+            background: rgba(255,255,255,0.1);
+            border-radius: 2px;
+        }}
+
+        .company-list::-webkit-scrollbar-thumb {{
+            background: rgba(255,255,255,0.4);
+            border-radius: 2px;
+        }}
+
+        .company-item {{
+            padding: 2px 0;
         }}
 
         .report-info {{
@@ -324,19 +373,24 @@ html_content = f'''<!DOCTYPE html>
 
 # 각 보고서 카드 추가
 for report in reports:
-    date_parts = report['date'].split(' ')
-    month_day = date_parts[1] + ' ' + date_parts[2]
+    # 회사 목록 HTML 생성
+    company_list_html = '\n'.join([f'<div class="company-item">• {name}</div>' for name in report['company_names']])
+
+    # 검색용 데이터 (시간 제외, 회사명 포함)
+    search_data = f"{report['date']} {report['category']} {report['title']} {' '.join(report['company_names'])}"
 
     html_content += f'''
-            <div class="report-card" data-search="{report['date']} {report['time']} {report['category']} {report['title']}">
+            <div class="report-card" data-search="{search_data}">
                 <div class="report-date">
-                    <div class="report-date-month">{month_day}</div>
-                    <div class="report-date-day">{report['time']}</div>
+                    <div class="report-date-day">{report['date']}</div>
+                    <div class="company-list">
+{company_list_html}
+                    </div>
                 </div>
                 <div class="report-info">
                     <div class="report-title">{report['title']}</div>
                     <div class="report-meta">
-                        📅 {report['date']} {report['time']}
+                        📅 {report['date']}
                         <span class="report-badge">🏢 {report['company_count']}개 기업</span>
                         <span class="report-badge">📂 {report['category']}</span>
                     </div>
