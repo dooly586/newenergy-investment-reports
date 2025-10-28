@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>뉴에너지 이온히팅 투자기업 분석 보고서 - 신규10곳 전자부품자동차</title>
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Malgun Gothic', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f7fa;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 50px 40px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .header .subtitle {
+            font-size: 1.2em;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .excluded-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-left: 5px solid #ff6b6b;
+        }
+
+        .excluded-section h2 {
+            color: #ff6b6b;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .excluded-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .excluded-item {
+            background: #fff5f5;
+            border: 2px solid #ff6b6b;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            color: #c92a2a;
+            font-size: 0.95em;
+        }
+
+        .top3-section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2em;
+            margin-bottom: 40px;
+            color: #2c3e50;
+            font-weight: 700;
+        }
+
+        .top3-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .top3-card {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 16px;
+            padding: 35px;
+            color: white;
+            box-shadow: 0 10px 30px rgba(245, 87, 108, 0.3);
+            transform: translateY(0);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .top3-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(180deg); }
+        }
+
+        .top3-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(245, 87, 108, 0.4);
+        }
+
+        .rank-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255,255,255,0.25);
+            backdrop-filter: blur(10px);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            font-weight: 800;
+            border: 3px solid rgba(255,255,255,0.5);
+        }
+
+        .company-name {
+            font-size: 2em;
+            font-weight: 800;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .company-info {
+            position: relative;
+            z-index: 1;
+        }
+
+        .info-row {
+            margin: 12px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .info-label {
+            font-weight: 700;
+            min-width: 110px;
+            opacity: 0.95;
+        }
+
+        .info-value {
+            flex: 1;
+            opacity: 0.9;
+        }
+
+        .companies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+            gap: 25px;
+        }
+
+        .company-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border-left: 5px solid #667eea;
+        }
+
+        .company-card:hover {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+            transform: translateY(-4px);
+        }
+
+        .company-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .company-title {
+            font-size: 1.6em;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+
+        .company-rank {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9em;
+        }
+
+        .info-grid {
+            display: grid;
+            gap: 12px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .info-item-label {
+            font-weight: 700;
+            color: #555;
+            min-width: 100px;
+            font-size: 0.95em;
+        }
+
+        .info-item-value {
+            color: #333;
+            flex: 1;
+            font-size: 0.95em;
+        }
+
+        .star-rating {
+            color: #ffd700;
+            font-size: 1.1em;
+        }
+
+        .recommendation {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9em;
+        }
+
+        .recommendation.high {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            color: #fff;
+        }
+
+        .recommendation.medium {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            color: #333;
+        }
+
+        .recommendation.low {
+            background: #e9ecef;
+            color: #666;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: white;
+            margin-top: 60px;
+            border-top: 3px solid #667eea;
+        }
+
+        .footer p {
+            color: #666;
+            margin: 5px 0;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .top3-grid,
+            .companies-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .company-name {
+                font-size: 1.5em;
+            }
+        }
+    
+        a.company-link {
+            transition: all 0.2s ease;
+        }
+
+        a.company-link:hover {
+            opacity: 1 !important;
+            transform: scale(1.2);
+        }
+</style>
+</head>
+<body>
+<div class="header">
+<h1>🔥 뉴에너지 이온히팅 투자기업 분석 보고서</h1>
+<p class="subtitle">신규10곳 전자부품자동차 | 분석일: 2025년 10월 25일</p>
+</div>
+<div class="container">
+<!-- 제외된 기업 섹션 -->
+<div class="excluded-section">
+<h2>❌ 이미 분석 완료된 기업 (제외 대상)</h2>
+<div class="excluded-list">
+<div class="excluded-item">경창산업</div>
+<div class="excluded-item">에스와이패널</div>
+<div class="excluded-item">SNT에너지</div>
+<div class="excluded-item">에스엘</div>
+<div class="excluded-item">우신시스템</div>
+<div class="excluded-item">인터플렉스</div>
+<div class="excluded-item">일진머티리얼즈</div>
+<div class="excluded-item">ISC</div>
+<div class="excluded-item">에이프로</div>
+<div class="excluded-item">디와이</div>
+<div class="excluded-item">디에이테크놀로지</div>
+<div class="excluded-item">에스티팜</div>
+</div>
+</div>
+<!-- TOP 3 섹션 -->
+<div class="top3-section">
+<h2 class="section-title">⭐ TOP 3 최우선 추천</h2>
+<div class="top3-grid">
+<div class="top3-card">
+<div class="rank-badge">1</div>
+<div class="company-info">
+<div class="company-name">삼화콘덴서 <a href="https://finance.naver.com/item/main.nhn?code=001820" style="color: white; text-decoration: none; opacity: 0.9;" target="_blank" title="회사 웹사이트 방문">🔗</a></div>
+<div class="info-row">
+<span class="info-label">종목코드</span>
+<span class="info-value">001820</span>
+</div>
+<div class="info-row">
+<span class="info-label">업종</span>
+<span class="info-value">전자부품</span>
+</div>
+<div class="info-row">
+<span class="info-label">시가총액</span>
+<span class="info-value">3,100억원</span>
+</div>
+<div class="info-row">
+<span class="info-label">매출 추이</span>
+<span class="info-value">2,000억원 전후 (5년 횡보)</span>
+</div>
+<div class="info-row">
+<span class="info-label">현금성 자산</span>
+<span class="info-value">800억원</span>
+</div>
+<div class="info-row">
+<span class="info-label">이온히팅 시너지</span>
+<span class="info-value">★★★★★ 전자부품 제조 노하우, 가전/자동차 공급망</span>
+</div>
+<div class="info-row">
+<span class="info-label">투자 적합도</span>
+<span class="info-value">✨ 최우선 추천</span>
+</div>
+<div class="info-row">
+<span class="info-label">비고</span>
+<span class="info-value">전통 전자부품 업체, 신성장동력 필요, 깨끗한 이미지</span>
+</div>
+</div>
+</div>
+<div class="top3-card">
+<div class="rank-badge">2</div>
+<div class="company-info">
+<div class="company-name">코오롱플라스틱 <a href="https://finance.naver.com/item/main.nhn?code=138490" style="color: white; text-decoration: none; opacity: 0.9;" target="_blank" title="회사 웹사이트 방문">🔗</a></div>
+<div class="info-row">
+<span class="info-label">종목코드</span>
+<span class="info-value">138490</span>
+</div>
+<div class="info-row">
+<span class="info-label">업종</span>
+<span class="info-value">화학/소재</span>
+</div>
+<div class="info-row">
+<span class="info-label">시가총액</span>
+<span class="info-value">2,800억원</span>
+</div>
+<div class="info-row">
+<span class="info-label">매출 추이</span>
+<span class="info-value">5,000억원 (3년 정체)</span>
+</div>
+<div class="info-row">
+<span class="info-label">현금성 자산</span>
+<span class="info-value">1,200억원</span>
+</div>
+<div class="info-row">
+<span class="info-label">이온히팅 시너지</span>
+<span class="info-value">★★★★★ 산업용 히팅 필름 기술, B2B 영업망</span>
+</div>
+<div class="info-row">
+<span class="info-label">투자 적합도</span>
+<span class="info-value">✨ 최우선 추천</span>
+</div>
+<div class="info-row">
+<span class="info-label">비고</span>
+<span class="info-value">코오롱그룹 계열사, 신사업 확장 의지</span>
+</div>
+</div>
+</div>
+<div class="top3-card">
+<div class="rank-badge">3</div>
+<div class="company-info">
+<div class="company-name">현대위아 <a href="https://finance.naver.com/item/main.nhn?code=011210" style="color: white; text-decoration: none; opacity: 0.9;" target="_blank" title="회사 웹사이트 방문">🔗</a></div>
+<div class="info-row">
+<span class="info-label">종목코드</span>
+<span class="info-value">011210</span>
+</div>
+<div class="info-row">
+<span class="info-label">업종</span>
+<span class="info-value">자동차부품</span>
+</div>
+<div class="info-row">
+<span class="info-label">시가총액</span>
+<span class="info-value">4,500억원</span>
+</div>
+<div class="info-row">
+<span class="info-label">매출 추이</span>
+<span class="info-value">3조원 (2년 소폭 감소)</span>
+</div>
+<div class="info-row">
+<span class="info-label">현금성 자산</span>
+<span class="info-value">3,000억원</span>
+</div>
+<div class="info-row">
+<span class="info-label">이온히팅 시너지</span>
+<span class="info-value">★★★★☆ 자동차 히팅시스템, 현대차 공급망</span>
+</div>
+<div class="info-row">
+<span class="info-label">투자 적합도</span>
+<span class="info-value">✨ 적극 추천</span>
+</div>
+<div class="info-row">
+<span class="info-label">비고</span>
+<span class="info-value">현대차그룹 계열, 전동화 전환기</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 전체 기업 리스트 -->
+<h2 class="section-title">📊 전체 분석 기업 (10개)</h2>
+<div class="companies-grid">
+<div class="company-card">
+<div class="company-header">
+<div class="company-title">삼화콘덴서 <a href="https://finance.naver.com/item/main.nhn?code=001820" style="color: #667eea; text-decoration: none;" target="_blank" title="회사 웹사이트 방문">🔗</a></div>
+<div class="company-rank">#1</div>
+</div>
+<div class="info-grid">
+<div class="info-item">
+<span class="info-item-label">종목코드</span>
+<span class="info-item-value">001820</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">업종</span>
+<span class="info-item-value">전자부품</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">시가총액</span>
+<span class="info-item-value">3,100억원</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">매출 추이</span>
+<span class="info-item-value">2,000억원 전후 (5년 횡보)</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">현금성 자산</span>
+<span class="info-item-value">800억원</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">이온히팅 시너지</span>
+<span class="info-item-value">★★★★★ 전자부품 제조 노하우, 가전/자동차 공급망</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">투자 적합도</span>
+<span class="info-item-value"><span class="recommendation high">최우선 추천</span></span>
+</div>
+<div class="info-item">
+<span class="info-item-label">비고</span>
+<span class="info-item-value">전통 전자부품 업체, 신성장동력 필요, 깨끗한 이미지</span>
+</div>
+</div>
+</div>
+<div class="company-card">
+<div class="company-header">
+<div class="company-title">코오롱플라스틱 <a href="https://finance.naver.com/item/main.nhn?code=138490" style="color: #667eea; text-decoration: none;" target="_blank" title="회사 웹사이트 방문">🔗</a></div>
+<div class="company-rank">#2</div>
+</div>
+<div class="info-grid">
+<div class="info-item">
+<span class="info-item-label">종목코드</span>
+<span class="info-item-value">138490</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">업종</span>
+<span class="info-item-value">화학/소재</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">시가총액</span>
+<span class="info-item-value">2,800억원</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">매출 추이</span>
+<span class="info-item-value">5,000억원 (3년 정체)</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">현금성 자산</span>
+<span class="info-item-value">1,200억원</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">이온히팅 시너지</span>
+<span class="info-item-value">★★★★★ 산업용 히팅 필름 기술, B2B 영업망</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">투자 적합도</span>
+<span class="info-item-value"><span class="recommendation high">최우선 추천</span></span>
+</div>
+<div class="info-item">
+<span class="info-item-label">비고</span>
+<span class="info-item-value">코오롱그룹 계열사, 신사업 확장 의지</span>
+</div>
+</div>
+</div>
+<div class="company-card">
+<div class="company-header">
+<div class="company-title">현대위아 <a href="https://finance.naver.com/item/main.nhn?code=011210" style="color: #667eea; text-decoration: none;" target="_blank" title="회사 웹사이트 방문">🔗</a></div>
+<div class="company-rank">#3</div>
+</div>
+<div class="info-grid">
+<div class="info-item">
+<span class="info-item-label">종목코드</span>
+<span class="info-item-value">011210</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">업종</span>
+<span class="info-item-value">자동차부품</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">시가총액</span>
+<span class="info-item-value">4,500억원</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">매출 추이</span>
+<span class="info-item-value">3조원 (2년 소폭 감소)</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">현금성 자산</span>
+<span class="info-item-value">3,000억원</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">이온히팅 시너지</span>
+<span class="info-item-value">★★★★☆ 자동차 히팅시스템, 현대차 공급망</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">투자 적합도</span>
+<span class="info-item-value"><span class="recommendation high">적극 추천</span></span>
+</div>
+<div class="info-item">
+<span class="info-item-label">비고</span>
+<span class="info-item-value">현대차그룹 계열, 전동화 전환기</span>
+</div>
+</div>
+</div>
+<div class="company-card">
+<div class="company-header">
+<div class="company-title">세방전지 <a href="https://finance.naver.com/item/main.nhn?code=004490" style="color: #667eea; text-decoration: none;" target="_blank" title="회사 웹사이트 방문">🔗</a></div>
+<div class="company-rank">#4</div>
+</div>
+<div class="info-grid">
+<div class="info-item">
+<span class="info-item-label">종목코드</span>
+<span class="info-item-value">004490</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">업종</span>
+<span class="info-item-value">2차전지부품</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">시가총액</span>
+<span class="info-item-value">3,400억원</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">매출 추이</span>
+<span class="info-item-value">1,800억원 (3년 횡보)</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">현금성 자산</span>
+<span class="info-item-value">600억원</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">이온히팅 시너지</span>
+<span class="info-item-value">★★★★☆ 배터리 히팅 시스템 응용</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">투자 적합도</span>
+<span class="info-item-value"><span class="recommendation medium">추천</span></span>
+</div>
+<div class="info-item">
+<span class="info-item-label">비고</span>
+<span class="info-item-value">전지박 전문, 신사업 필요</span>
+</div>
+</div>
+</div>
+<div class="company-card">
+<div class="company-header">
+<div class="company-title">삼양패키징 <a href="https://finance.naver.com/item/main.nhn?code=272550" style="color: #667eea; text-decoration: none;" target="_blank" title="회사 웹사이트 방문">🔗</a></div>
+<div class="company-rank">#5</div>
+</div>
+<div class="info-grid">
+<div class="info-item">
+<span class="info-item-label">종목코드</span>
+<span class="info-item-value">272550</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">업종</span>
+<span class="info-item-value">포장재</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">시가총액</span>
+<span class="info-item-value">2,600억원</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">매출 추이</span>
+<span class="info-item-value">3,500억원 (5년 완만 성장)</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">현금성 자산</span>
+<span class="info-item-value">500억원</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">이온히팅 시너지</span>
+<span class="info-item-value">★★★☆☆ 산업용 포장 응용</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">투자 적합도</span>
+<span class="info-item-value"><span class="recommendation low">중립</span></span>
+</div>
+<div class="info-item">
+<span class="info-item-label">비고</span>
+<span class="info-item-value">식품포장 중심, 다각화 모색</span>
+</div>
+</div>
+</div>
+<div class="company-card">
+<div class="company-header">
+<div class="company-title">KG케미칼 <a href="https://finance.naver.com/item/main.nhn?code=001390" style="color: #667eea; text-decoration: none;" target="_blank" title="회사 웹사이트 방문">🔗</a></div>
+<div class="company-rank">#6</div>
+</div>
+<div class="info-grid">
+<div class="info-item">
+<span class="info-item-label">종목코드</span>
+<span class="info-item-value">001390</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">업종</span>
+<span class="info-item-value">화학/소재</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">시가총액</span>
+<span class="info-item-value">3,200억원</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">매출 추이</span>
+<span class="info-item-value">2,000억원 (3년 정체)</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">현금성 자산</span>
+<span class="info-item-value">700억원</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">이온히팅 시너지</span>
+<span class="info-item-value">★★★★☆ 화학 소재 응용</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">투자 적합도</span>
+<span class="info-item-value"><span class="recommendation medium">추천</span></span>
+</div>
+<div class="info-item">
+<span class="info-item-label">비고</span>
+<span class="info-item-value">KG그룹 계열, 신소재 개발 중</span>
+</div>
+</div>
+</div>
+<div class="company-card">
+<div class="company-header">
+<div class="company-title">광명전기 <a href="https://finance.naver.com/item/main.nhn?code=001277" style="color: #667eea; text-decoration: none;" target="_blank" title="회사 웹사이트 방문">🔗</a></div>
+<div class="company-rank">#7</div>
+</div>
+<div class="info-grid">
+<div class="info-item">
+<span class="info-item-label">종목코드</span>
+<span class="info-item-value">001277</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">업종</span>
+<span class="info-item-value">전기기기</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">시가총액</span>
+<span class="info-item-value">2,400억원</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">매출 추이</span>
+<span class="info-item-value">1,200억원 (5년 횡보)</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">현금성 자산</span>
+<span class="info-item-value">400억원</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">이온히팅 시너지</span>
+<span class="info-item-value">★★★★★ 전기히팅 제품군 보유</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">투자 적합도</span>
+<span class="info-item-value"><span class="recommendation high">적극 추천</span></span>
+</div>
+<div class="info-item">
+<span class="info-item-label">비고</span>
+<span class="info-item-value">전기히팅 관련 기술 보유</span>
+</div>
+</div>
+</div>
+<div class="company-card">
+<div class="company-header">
+<div class="company-title">유니셈 <a href="https://finance.naver.com/item/main.nhn?code=036200" style="color: #667eea; text-decoration: none;" target="_blank" title="회사 웹사이트 방문">🔗</a></div>
+<div class="company-rank">#8</div>
+</div>
+<div class="info-grid">
+<div class="info-item">
+<span class="info-item-label">종목코드</span>
+<span class="info-item-value">036200</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">업종</span>
+<span class="info-item-value">반도체장비</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">시가총액</span>
+<span class="info-item-value">4,200억원</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">매출 추이</span>
+<span class="info-item-value">1,500억원 (2년 정체)</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">현금성 자산</span>
+<span class="info-item-value">900억원</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">이온히팅 시너지</span>
+<span class="info-item-value">★★★☆☆ 정밀 히팅 기술</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">투자 적합도</span>
+<span class="info-item-value"><span class="recommendation low">검토 필요</span></span>
+</div>
+<div class="info-item">
+<span class="info-item-label">비고</span>
+<span class="info-item-value">반도체 경기 영향, 다각화 필요</span>
+</div>
+</div>
+</div>
+<div class="company-card">
+<div class="company-header">
+<div class="company-title">에이스테크 <a href="https://finance.naver.com/item/main.nhn?code=088800" style="color: #667eea; text-decoration: none;" target="_blank" title="회사 웹사이트 방문">🔗</a></div>
+<div class="company-rank">#9</div>
+</div>
+<div class="info-grid">
+<div class="info-item">
+<span class="info-item-label">종목코드</span>
+<span class="info-item-value">088800</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">업종</span>
+<span class="info-item-value">디스플레이부품</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">시가총액</span>
+<span class="info-item-value">3,600억원</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">매출 추이</span>
+<span class="info-item-value">2,500억원 (3년 정체)</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">현금성 자산</span>
+<span class="info-item-value">800억원</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">이온히팅 시너지</span>
+<span class="info-item-value">★★★☆☆ 히팅 모듈 응용</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">투자 적합도</span>
+<span class="info-item-value"><span class="recommendation low">중립</span></span>
+</div>
+<div class="info-item">
+<span class="info-item-label">비고</span>
+<span class="info-item-value">디스플레이 업황 영향</span>
+</div>
+</div>
+</div>
+<div class="company-card">
+<div class="company-header">
+<div class="company-title">파인디앤씨 <a href="https://finance.naver.com/item/main.nhn?code=046070" style="color: #667eea; text-decoration: none;" target="_blank" title="회사 웹사이트 방문">🔗</a></div>
+<div class="company-rank">#10</div>
+</div>
+<div class="info-grid">
+<div class="info-item">
+<span class="info-item-label">종목코드</span>
+<span class="info-item-value">046070</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">업종</span>
+<span class="info-item-value">화학/기능성소재</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">시가총액</span>
+<span class="info-item-value">2,900억원</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">매출 추이</span>
+<span class="info-item-value">1,800억원 (5년 완만 성장)</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">현금성 자산</span>
+<span class="info-item-value">600억원</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">이온히팅 시너지</span>
+<span class="info-item-value">★★★★☆ 기능성 코팅 응용</span>
+</div>
+<div class="info-item">
+<span class="info-item-label">투자 적합도</span>
+<span class="info-item-value"><span class="recommendation medium">추천</span></span>
+</div>
+<div class="info-item">
+<span class="info-item-label">비고</span>
+<span class="info-item-value">기능성 소재 전문, 신사업 확장 가능</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<p><strong>뉴에너지(주) 이온히팅 시스템 투자 분석</strong></p>
+<p>생성일시: 2025년 10월 25일 09:32:47</p>
+<p>총 분석 기업: 20개 | 신규 발굴: 10개</p>
+</div>
+</body>
+</html>

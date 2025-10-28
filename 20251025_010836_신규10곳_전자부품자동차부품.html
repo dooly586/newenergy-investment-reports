@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>뉴에너지 이온히팅 투자기업 분석 보고서 - 신규10곳 전자부품자동차부품</title>
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Malgun Gothic', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            color: #667eea;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title::before {
+            content: '📊';
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+
+        .criteria-box {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+            margin-bottom: 20px;
+        }
+
+        .criteria-item {
+            padding: 10px 0;
+            font-size: 1.1em;
+        }
+
+        .criteria-item::before {
+            content: '✅';
+            margin-right: 10px;
+        }
+
+        .criteria-item.exclude::before {
+            content: '❌';
+        }
+
+        .company-card {
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            transition: all 0.3s;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .company-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+            border-color: #667eea;
+        }
+
+        .company-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .company-name {
+            font-size: 1.5em;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .company-rank {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        .rank-top {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .company-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .info-item {
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 8px;
+            border-left: 3px solid #667eea;
+        }
+
+        .info-label {
+            font-size: 0.9em;
+            color: #6c757d;
+            margin-bottom: 5px;
+        }
+
+        .info-value {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .analysis-section {
+            margin: 15px 0;
+        }
+
+        .analysis-title {
+            font-weight: bold;
+            color: #495057;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .analysis-content {
+            padding-left: 20px;
+        }
+
+        .analysis-item {
+            padding: 8px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .analysis-item:last-child {
+            border-bottom: none;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border-left: 5px solid #fdcb6e;
+        }
+
+        .highlight-box h3 {
+            color: #d63031;
+            margin-bottom: 10px;
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        tr:hover {
+            background: #f8f9fa;
+        }
+
+        .stars {
+            color: #ffd700;
+            font-size: 1.2em;
+        }
+
+        .strategy-box {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+
+        .strategy-step {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .strategy-step h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+
+        .checklist li {
+            padding: 10px;
+            margin: 5px 0;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .checklist li::before {
+            content: '☐';
+            margin-right: 10px;
+            color: #667eea;
+            font-size: 1.2em;
+        }
+
+        .warning-box {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .warning-box h3 {
+            color: #dc3545;
+            margin-bottom: 15px;
+        }
+
+        .warning-item {
+            padding: 10px;
+            margin: 8px 0;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #dc3545;
+        }
+
+        .final-recommendation {
+            background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .final-recommendation h3 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #2d3436;
+        }
+
+        .consortium {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .consortium-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 10px;
+            flex: 1;
+            min-width: 200px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .consortium-item h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .container {
+                box-shadow: none;
+            }
+
+            .company-card {
+                page-break-inside: avoid;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .company-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .company-rank {
+                margin-top: 10px;
+            }
+        }
+    
+        a.company-link {
+            transition: all 0.2s ease;
+        }
+
+        a.company-link:hover {
+            opacity: 1 !important;
+            transform: scale(1.2);
+        }
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<h1>🔥 뉴에너지 이온히팅 투자기업 분석 보고서</h1>
+<p>신규10곳 전자부품자동차부품 | 분석일: 2025년 10월 25일</p>
+</div>
+<div class="content">
+<!-- 투자 조건 섹션 -->
+<div class="section">
+<h2 class="section-title">투자 조건 요약</h2>
+<div class="criteria-box">
+<div class="criteria-item">상장기업 중 매출이 크게 늘지 않는 회사</div>
+<div class="criteria-item exclude">건설사, 바이오 업종 제외</div>
+<div class="criteria-item">새로운 돌파구가 될 만한 신사업을 찾고 있는 회사</div>
+<div class="criteria-item">새로운 회사에 자본금 500억을 투자할 여력이 있는 회사</div>
+<div class="criteria-item">이 새로운 투자로 주가상승을 기대할 수 있다고 생각하는 회사</div>
+<div class="criteria-item">굴뚝산업(기계, 제조업) 선호</div>
+</div>
+</div>
+<!-- TOP 3 추천 기업 -->
+<div class="section">
+<h2 class="section-title">최우선 추천 TOP 3</h2>
+<div class="table-responsive">
+<table>
+<thead>
+<tr>
+<th>순위</th>
+<th>기업명</th>
+<th>시너지 점수</th>
+<th>투자 매력도</th>
+<th>리스크</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1위</strong></td>
+<td><strong>경창산업</strong></td>
+<td><span class="stars">⭐⭐⭐⭐⭐</span></td>
+<td>저평가 + 높은 시너지</td>
+<td style="color: #27ae60;">낮음</td>
+</tr>
+<tr>
+<td><strong>2위</strong></td>
+<td><strong>동양기전</strong></td>
+<td><span class="stars">⭐⭐⭐⭐⭐</span></td>
+<td>기술 연관성 높음</td>
+<td style="color: #27ae60;">낮음</td>
+</tr>
+<tr>
+<td><strong>3위</strong></td>
+<td><strong>대원전선</strong></td>
+<td><span class="stars">⭐⭐⭐⭐</span></td>
+<td>안정성 + 인프라 수요</td>
+<td style="color: #27ae60;">낮음</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- 추천 기업 상세 -->
+<div class="section">
+<h2 class="section-title">추천 기업 상세 분석</h2>
+<!-- 1. 경창산업 -->
+<div class="company-card">
+<div class="company-header">
+<div class="company-name">1. 경창산업 (A038540)</div>
+<div class="company-rank rank-top">⭐⭐⭐⭐⭐ 최우선 추천</div>
+</div>
+<div class="company-info">
+<div class="info-item">
+<div class="info-label">업종</div>
+<div class="info-value">자동차 부품 제조</div>
+</div>
+<div class="info-item">
+<div class="info-label">시가총액</div>
+<div class="info-value">약 800억원</div>
+</div>
+<div class="info-item">
+<div class="info-label">매출액</div>
+<div class="info-value">1,800억원</div>
+</div>
+<div class="info-item">
+<div class="info-label">현재 주가</div>
+<div class="info-value">1,500원</div>
+</div>
+</div>
+<div class="analysis-section">
+<div class="analysis-title">적합도 분석</div>
+<div class="analysis-content">
+<div class="analysis-item">✅ 통화록에서 직접 언급된 기업</div>
+<div class="analysis-item">✅ 자동차 부품 제조 → 굴뚝산업</div>
+<div class="analysis-item">✅ 주가 하락으로 저평가 상태</div>
+<div class="analysis-item">✅ 안정적 매출 기반</div>
+<div class="analysis-item">⚠️ 전기차 전환 시대에 신사업 필요</div>
+</div>
+</div>
+<div class="highlight-box">
+<h3>🎯 투자 포인트</h3>
+<p>뉴에너지(배터리·전력변환) 사업 진출 시 시너지 극대화 가능. 기존 자동차 OEM 납품 경험을 활용한 전기차 전장화 솔루션 제공 가능.</p>
+</div>
+</div>
+<!-- 2. 동양기전 -->
+<div class="company-card">
+<div class="company-header">
+<div class="company-name">2. 동양기전 (A004140)</div>
+<div class="company-rank rank-top">⭐⭐⭐⭐⭐ 최우선 추천</div>
+</div>
+<div class="company-info">
+<div class="info-item">
+<div class="info-label">업종</div>
+<div class="info-value">산업용 전기기기 제조</div>
+</div>
+<div class="info-item">
+<div class="info-label">시가총액</div>
+<div class="info-value">약 650억원</div>
+</div>
+<div class="info-item">
+<div class="info-label">매출액</div>
+<div class="info-value">1,200억원</div>
+</div>
+</div>
+<div class="analysis-section">
+<div class="analysis-title">적합도 분석</div>
+<div class="analysis-content">
+<div class="analysis-item">✅ 전기기기 전문 → 뉴에너지와 직접 연관</div>
+<div class="analysis-item">✅ 기술력 보유, 매출 정체</div>
+<div class="analysis-item">✅ ESS·전력변환 기술 적용 가능</div>
+<div class="analysis-item">✅ 안정적 재무구조</div>
+</div>
+</div>
+<div class="highlight-box">
+<h3>🎯 투자 포인트</h3>
+<p>기존 전기기술 + 뉴에너지 = 자연스러운 사업 확장. 산업용 ESS 토탈 솔루션 제공 가능.</p>
+</div>
+</div>
+<!-- 3. 대창 -->
+<div class="company-card">
+<div class="company-header">
+<div class="company-name">3. 대창 (A016710)</div>
+<div class="company-rank">⭐⭐⭐⭐</div>
+</div>
+<div class="company-info">
+<div class="info-item">
+<div class="info-label">업종</div>
+<div class="info-value">금속 가공 및 산업기계</div>
+</div>
+<div class="info-item">
+<div class="info-label">시가총액</div>
+<div class="info-value">약 550억원</div>
+</div>
+<div class="info-item">
+<div class="info-label">매출액</div>
+<div class="info-value">900억원</div>
+</div>
+</div>
+<div class="analysis-section">
+<div class="analysis-title">적합도 분석</div>
+<div class="analysis-content">
+<div class="analysis-item">✅ 전통 제조업 기반 탄탄</div>
+<div class="analysis-item">✅ 배터리 팩 하우징 제조 진출 가능</div>
+<div class="analysis-item">✅ 낮은 부채비율</div>
+<div class="analysis-item">✅ 신사업 필요성 인식</div>
+</div>
+</div>
+<div class="highlight-box">
+<h3>🎯 투자 포인트</h3>
+<p>금속 가공 기술 활용한 배터리·ESS 케이스 제조 가능.</p>
+</div>
+</div>
+<!-- 4. 새론오토모티브 -->
+<div class="company-card">
+<div class="company-header">
+<div class="company-name">4. 새론오토모티브 (A065530)</div>
+<div class="company-rank">⭐⭐⭐⭐</div>
+</div>
+<div class="company-info">
+<div class="info-item">
+<div class="info-label">업종</div>
+<div class="info-value">자동차 전장부품</div>
+</div>
+<div class="info-item">
+<div class="info-label">시가총액</div>
+<div class="info-value">약 480억원</div>
+</div>
+<div class="info-item">
+<div class="info-label">매출액</div>
+<div class="info-value">850억원</div>
+</div>
+</div>
+<div class="analysis-section">
+<div class="analysis-title">적합도 분석</div>
+<div class="analysis-content">
+<div class="analysis-item">✅ 전장부품 → 전기차 전환 수혜</div>
+<div class="analysis-item">✅ 기술력 보유</div>
+<div class="analysis-item">✅ 매출 정체, 돌파구 필요</div>
+<div class="analysis-item">✅ BMS(배터리관리시스템) 연계 가능</div>
+</div>
+</div>
+<div class="highlight-box">
+<h3>🎯 투자 포인트</h3>
+<p>전장 기술 + 뉴에너지 BMS 기술 융합 가능.</p>
+</div>
+</div>
+<!-- 5. 에스에프에이 -->
+<div class="company-card">
+<div class="company-header">
+<div class="company-name">5. 에스에프에이 (A056190)</div>
+<div class="company-rank">⭐⭐⭐⭐</div>
+</div>
+<div class="company-info">
+<div class="info-item">
+<div class="info-label">업종</div>
+<div class="info-value">반도체·디스플레이 장비</div>
+</div>
+<div class="info-item">
+<div class="info-label">시가총액</div>
+<div class="info-value">약 720억원</div>
+</div>
+<div class="info-item">
+<div class="info-label">매출액</div>
+<div class="info-value">1,100억원</div>
+</div>
+</div>
+<div class="analysis-section">
+<div class="analysis-title">적합도 분석</div>
+<div class="analysis-content">
+<div class="analysis-item">✅ 정밀기계 제조 기술력</div>
+<div class="analysis-item">✅ 배터리 제조장비 전환 가능</div>
+<div class="analysis-item">✅ 안정적 현금흐름</div>
+<div class="analysis-item">✅ R&amp;D 역량 우수</div>
+</div>
+</div>
+<div class="highlight-box">
+<h3>🎯 투자 포인트</h3>
+<p>반도체 장비 기술 → 2차전지 제조장비 응용 가능.</p>
+</div>
+</div>
+<!-- 6. 피에스케이 -->
+<div class="company-card">
+<div class="company-header">
+<div class="company-name">6. 피에스케이 (A319660)</div>
+<div class="company-rank">⭐⭐⭐⭐</div>
+</div>
+<div class="company-info">
+<div class="info-item">
+<div class="info-label">업종</div>
+<div class="info-value">전력반도체·파워모듈</div>
+</div>
+<div class="info-item">
+<div class="info-label">시가총액</div>
+<div class="info-value">약 600억원</div>
+</div>
+<div class="info-item">
+<div class="info-label">매출액</div>
+<div class="info-value">750억원</div>
+</div>
+</div>
+<div class="analysis-section">
+<div class="analysis-title">적합도 분석</div>
+<div class="analysis-content">
+<div class="analysis-item">✅ 전력변환 핵심 기술 보유</div>
+<div class="analysis-item">✅ 뉴에너지와 직접 관련</div>
+<div class="analysis-item">✅ 성장 가능성 높음</div>
+<div class="analysis-item">⚠️ 시가총액 다소 작음</div>
+</div>
+</div>
+<div class="highlight-box">
+<h3>🎯 투자 포인트</h3>
+<p>기존 파워모듈 기술 + ESS 전력변환 시너지 극대화.</p>
+</div>
+</div>
+<!-- 7. 대원전선 -->
+<div class="company-card">
+<div class="company-header">
+<div class="company-name">7. 대원전선 (A006340)</div>
+<div class="company-rank rank-top">⭐⭐⭐⭐ TOP 3</div>
+</div>
+<div class="company-info">
+<div class="info-item">
+<div class="info-label">업종</div>
+<div class="info-value">전선·케이블 제조</div>
+</div>
+<div class="info-item">
+<div class="info-label">시가총액</div>
+<div class="info-value">약 850억원</div>
+</div>
+<div class="info-item">
+<div class="info-label">매출액</div>
+<div class="info-value">1,600억원</div>
+</div>
+</div>
+<div class="analysis-section">
+<div class="analysis-title">적합도 분석</div>
+<div class="analysis-content">
+<div class="analysis-item">✅ 전력 인프라 핵심 소재</div>
+<div class="analysis-item">✅ ESS 연결 케이블 수요 증가</div>
+<div class="analysis-item">✅ 안정적 매출 기반</div>
+<div class="analysis-item">✅ 500억 투자 여력 충분</div>
+</div>
+</div>
+<div class="highlight-box">
+<h3>🎯 투자 포인트</h3>
+<p>전선 제조 + 신재생에너지 케이블 특화. 전력 인프라 네트워크 활용.</p>
+</div>
+</div>
+<!-- 8. 삼화전기 -->
+<div class="company-card">
+<div class="company-header">
+<div class="company-name">8. 삼화전기 (A009470)</div>
+<div class="company-rank">⭐⭐⭐</div>
+</div>
+<div class="company-info">
+<div class="info-item">
+<div class="info-label">업종</div>
+<div class="info-value">전자부품 제조</div>
+</div>
+<div class="info-item">
+<div class="info-label">시가총액</div>
+<div class="info-value">약 520억원</div>
+</div>
+<div class="info-item">
+<div class="info-label">매출액</div>
+<div class="info-value">680억원</div>
+</div>
+</div>
+<div class="analysis-section">
+<div class="analysis-title">적합도 분석</div>
+<div class="analysis-content">
+<div class="analysis-item">✅ 전자부품 제조 기술</div>
+<div class="analysis-item">✅ 배터리 안전소자 진출 가능</div>
+<div class="analysis-item">✅ 낮은 부채비율</div>
+<div class="analysis-item">✅ 신사업 모색 중</div>
+</div>
+</div>
+<div class="highlight-box">
+<h3>🎯 투자 포인트</h3>
+<p>안전소자 기술 + 배터리 보호회로 개발 가능.</p>
+</div>
+</div>
+<!-- 9. 덕산하이메탈 -->
+<div class="company-card">
+<div class="company-header">
+<div class="company-name">9. 덕산하이메탈 (A077360)</div>
+<div class="company-rank">⭐⭐⭐</div>
+</div>
+<div class="company-info">
+<div class="info-item">
+<div class="info-label">업종</div>
+<div class="info-value">전자재료 제조</div>
+</div>
+<div class="info-item">
+<div class="info-label">시가총액</div>
+<div class="info-value">약 480억원</div>
+</div>
+<div class="info-item">
+<div class="info-label">매출액</div>
+<div class="info-value">650억원</div>
+</div>
+</div>
+<div class="analysis-section">
+<div class="analysis-title">적합도 분석</div>
+<div class="analysis-content">
+<div class="analysis-item">✅ 전자재료 기술력</div>
+<div class="analysis-item">✅ 배터리 소재 확장 가능</div>
+<div class="analysis-item">✅ R&amp;D 투자 지속</div>
+<div class="analysis-item">✅ 신사업 필요성 높음</div>
+</div>
+</div>
+<div class="highlight-box">
+<h3>🎯 투자 포인트</h3>
+<p>기존 소재 기술 + 배터리 전극재료 개발 가능.</p>
+</div>
+</div>
+<!-- 10. 기타 후보 -->
+<div class="company-card">
+<div class="company-header">
+<div class="company-name">10. 기타 유망 후보군</div>
+<div class="company-rank">⭐⭐⭐</div>
+</div>
+<div class="analysis-section">
+<div class="analysis-title">추가 검토 대상</div>
+<div class="analysis-content">
+<div class="analysis-item">• 한국가스공사 계열사 또는 협력사 (정부 신재생에너지 정책 수혜)</div>
+<div class="analysis-item">• 전력기기 제조 중견기업</div>
+<div class="analysis-item">• 산업용 기계 제조 안정 기업</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 투자 전략 -->
+<div class="section">
+<h2 class="section-title">투자 전략 제안</h2>
+<div class="strategy-box">
+<div class="strategy-step">
+<h4>1단계: 접촉 우선순위</h4>
+<ol>
+<li><strong>경창산업 (038540)</strong> - 이미 언급된 기업, 즉시 접촉 가능</li>
+<li><strong>동양기전 (004140)</strong> - 전기기술 시너지 최고</li>
+<li><strong>대원전선 (006340)</strong> - 안정적, 투자 여력 충분</li>
+</ol>
+</div>
+<div class="strategy-step">
+<h4>2단계: 제안 구조</h4>
+<ul>
+<li>💰 현금 투자: 500억원</li>
+<li>📊 지분 취득: 15% (협상 가능)</li>
+<li>🏢 신규 법인 설립: 뉴에너지 전력변환·ESS 사업</li>
+<li>🤝 기존 기술 시너지 활용</li>
+<li>🔬 공동 R&amp;D 및 판로 개척</li>
+</ul>
+</div>
+<div class="strategy-step">
+<h4>3단계: 회사별 맞춤 제안</h4>
+<div style="margin-top: 15px;">
+<p><strong>경창산업 → 자동차 전장화 솔루션</strong></p>
+<ul>
+<li>기존: 자동차 부품</li>
+<li>신사업: 전기차 전력변환 시스템</li>
+<li>시너지: 자동차 OEM 납품 경험 활용</li>
+</ul>
+</div>
+<div style="margin-top: 15px;">
+<p><strong>동양기전 → 산업용 ESS 토탈 솔루션</strong></p>
+<ul>
+<li>기존: 산업용 전기기기</li>
+<li>신사업: ESS + 전력변환 통합 시스템</li>
+<li>시너지: 산업용 고객 기반 활용</li>
+</ul>
+</div>
+<div style="margin-top: 15px;">
+<p><strong>대원전선 → 신재생에너지 인프라</strong></p>
+<ul>
+<li>기존: 전선·케이블</li>
+<li>신사업: ESS 연결 특수 케이블</li>
+<li>시너지: 전력 인프라 네트워크</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<!-- 회피 기업 -->
+<div class="section">
+<h2 class="section-title">회피해야 할 기업 유형</h2>
+<div class="warning-box">
+<h3>❌ 절대 회피</h3>
+<div class="warning-item">건설사 (삼부토건 등) - 정치적 리스크, 업황 악화</div>
+<div class="warning-item">바이오/신약 개발 (올리패스 등) - 높은 불확실성, 실패 확률</div>
+<div class="warning-item">회생절차 진행 중 기업</div>
+<div class="warning-item">관리종목 지정 기업</div>
+<div class="warning-item">상장폐지 임박 (3년 내)</div>
+<div class="warning-item">시가총액 급락 기업 (3,400억 → 90억 등)</div>
+<div class="warning-item">거래정지 이력 보유</div>
+<div class="warning-item">특정 정치 집단 연루 기업</div>
+</div>
+</div>
+<!-- 실행 계획 -->
+<div class="section">
+<h2 class="section-title">다음 단계 실행 계획</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+<div class="criteria-box">
+<h3 style="color: #667eea; margin-bottom: 15px;">즉시 실행 항목</h3>
+<ul class="checklist">
+<li>경창산업 IR팀 연락처 확보</li>
+<li>최근 3개년 재무제표 상세 검토</li>
+<li>경영진 미팅 요청</li>
+<li>동양기전 기술 포트폴리오 분석</li>
+<li>대원전선 투자 여력 확인</li>
+</ul>
+</div>
+<div class="criteria-box">
+<h3 style="color: #667eea; margin-bottom: 15px;">추가 자료 준비</h3>
+<ul class="checklist">
+<li>뉴에너지 사업계획서</li>
+<li>15% 지분 기준 투자 구조 제안서</li>
+<li>시너지 효과 분석 자료</li>
+<li>재무 모델링 (3~5개년)</li>
+</ul>
+</div>
+<div class="criteria-box">
+<h3 style="color: #667eea; margin-bottom: 15px;">정밀 실사 체크리스트</h3>
+<ul class="checklist">
+<li>재무 건전성 분석</li>
+<li>경영진 의지 및 비전 평가</li>
+<li>노조 상황 및 노사관계</li>
+<li>주요 주주 구성 및 의결권</li>
+<li>특허 및 기술력 검증</li>
+<li>정치적 리스크 검토</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- 최종 제안 -->
+<div class="section">
+<div class="final-recommendation">
+<h3>🏆 최종 추천 전략</h3>
+<p style="font-size: 1.2em; margin-bottom: 20px;">
+                        "여러 사람이 국가를 만드는 것" 철학에 부합하는 <strong>3사 컨소시엄 구조</strong>
+</p>
+<div class="consortium">
+<div class="consortium-item">
+<h4>경창산업</h4>
+<p>부품 제조</p>
+<p style="font-size: 0.9em; color: #6c757d;">자동차 OEM 납품 경험</p>
+</div>
+<div style="display: flex; align-items: center; font-size: 2em; color: #667eea;">→</div>
+<div class="consortium-item">
+<h4>동양기전</h4>
+<p>전력변환 기술</p>
+<p style="font-size: 0.9em; color: #6c757d;">ESS 통합 시스템</p>
+</div>
+<div style="display: flex; align-items: center; font-size: 2em; color: #667eea;">→</div>
+<div class="consortium-item">
+<h4>대원전선</h4>
+<p>인프라 연결</p>
+<p style="font-size: 0.9em; color: #6c757d;">전력 네트워크</p>
+</div>
+</div>
+<div style="margin-top: 30px; padding: 20px; background: white; border-radius: 10px;">
+<h4 style="color: #2d3436; margin-bottom: 15px;">컨소시엄 구조의 장점</h4>
+<ul style="text-align: left; display: inline-block;">
+<li>✅ 단일 투자 대비 시너지 극대화</li>
+<li>✅ 리스크 분산 효과</li>
+<li>✅ 생태계 구축으로 경쟁력 강화</li>
+<li>✅ 상호 보완적 기술 융합</li>
+<li>✅ 공동 마케팅 및 판로 개척</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- 투자 성공 핵심 요소 -->
+<div class="section">
+<h2 class="section-title">투자 성공 핵심 요소</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+<div class="criteria-box" style="border-left-color: #667eea;">
+<h4 style="color: #667eea; margin-bottom: 10px;">1. 기술 시너지</h4>
+<ul>
+<li>전력변환 + ESS + 배터리관리</li>
+<li>전기·전자·기계 기술 보유</li>
+<li>즉시 사업화 가능한 기반</li>
+</ul>
+</div>
+<div class="criteria-box" style="border-left-color: #27ae60;">
+<h4 style="color: #27ae60; margin-bottom: 10px;">2. 재무 건전성</h4>
+<ul>
+<li>500억 투자 소화 가능</li>
+<li>부채비율 적정</li>
+<li>현금흐름 안정적</li>
+</ul>
+</div>
+<div class="criteria-box" style="border-left-color: #e67e22;">
+<h4 style="color: #e67e22; margin-bottom: 10px;">3. 상장 유지 동기</h4>
+<ul>
+<li>상장폐지 3~5년 전 단계</li>
+<li>신사업 없이는 성장 한계</li>
+<li>주식 발행 자금 조달 희망</li>
+</ul>
+</div>
+<div class="criteria-box" style="border-left-color: #9b59b6;">
+<h4 style="color: #9b59b6; margin-bottom: 10px;">4. 주가 상승 잠재력</h4>
+<ul>
+<li>현재 저평가 상태</li>
+<li>신사업 발표 시 재평가</li>
+<li>신재생에너지 정책 수혜</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

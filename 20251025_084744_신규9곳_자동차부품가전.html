@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>뉴에너지 이온히팅 투자기업 분석 보고서 - 신규9곳 자동차부품가전</title>
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Malgun Gothic', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 50px 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.95;
+        }
+
+        .header .subtitle {
+            margin-top: 10px;
+            font-size: 1em;
+            opacity: 0.85;
+            font-style: italic;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 2em;
+            color: #667eea;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 4px solid #667eea;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title::before {
+            content: '📊';
+            margin-right: 15px;
+            font-size: 1.3em;
+        }
+
+        .top3-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .top3-card {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(245, 87, 108, 0.3);
+            transition: transform 0.3s;
+        }
+
+        .top3-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .top3-rank {
+            font-size: 3em;
+            font-weight: bold;
+            opacity: 0.3;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+
+        .top3-card h3 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        .top3-card .code {
+            font-size: 1em;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+
+        .top3-card .industry {
+            background: rgba(255,255,255,0.2);
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+        }
+
+        .top3-card .highlight {
+            font-size: 1.1em;
+            margin-top: 15px;
+            padding: 15px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 10px;
+        }
+
+        .company-card {
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: all 0.3s;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        .company-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.2);
+            border-color: #667eea;
+        }
+
+        .company-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .company-name {
+            font-size: 1.8em;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .company-rank {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        .rank-top {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            font-size: 1em;
+        }
+
+        .company-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .info-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .info-label {
+            font-size: 0.9em;
+            color: #6c757d;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .info-value {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .analysis-section {
+            margin: 20px 0;
+        }
+
+        .analysis-title {
+            font-weight: bold;
+            color: #495057;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+        }
+
+        .analysis-title::before {
+            content: '🔍';
+            margin-right: 10px;
+        }
+
+        .analysis-content {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .analysis-item {
+            padding: 10px 0;
+            border-bottom: 1px solid #dee2e6;
+            font-size: 1.05em;
+        }
+
+        .analysis-item:last-child {
+            border-bottom: none;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            border-left: 6px solid #fdcb6e;
+        }
+
+        .highlight-box h3 {
+            color: #d63031;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .highlight-box p {
+            font-size: 1.05em;
+            line-height: 1.8;
+        }
+
+        .strategy-box {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 25px 0;
+        }
+
+        .strategy-step {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+        }
+
+        .strategy-step h4 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .strategy-step ol, .strategy-step ul {
+            margin-left: 25px;
+        }
+
+        .strategy-step li {
+            margin: 10px 0;
+            font-size: 1.05em;
+        }
+
+        .proposal-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 25px 0;
+        }
+
+        .proposal-card h4 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+            padding-bottom: 10px;
+        }
+
+        .proposal-section {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .proposal-section h5 {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .proposal-section ul {
+            margin-left: 20px;
+        }
+
+        .proposal-section li {
+            margin: 10px 0;
+            font-size: 1.05em;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            margin-left: 40px;
+            position: relative;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -25px;
+            top: 25px;
+            width: 15px;
+            height: 15px;
+            background: #667eea;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #667eea;
+        }
+
+        .timeline-item h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .message-box {
+            background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+
+        .message-box h3 {
+            color: #2d3436;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .message-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .message-item h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .message-item blockquote {
+            border-left: 4px solid #667eea;
+            padding-left: 20px;
+            font-style: italic;
+            color: #495057;
+            margin: 10px 0;
+            font-size: 1.05em;
+        }
+
+        .stars {
+            color: #ffd700;
+            font-size: 1.3em;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .container {
+                box-shadow: none;
+            }
+
+            .company-card {
+                page-break-inside: avoid;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .company-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .company-rank {
+                margin-top: 10px;
+            }
+
+            .top3-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    
+        a.company-link {
+            transition: all 0.2s ease;
+        }
+
+        a.company-link:hover {
+            opacity: 1 !important;
+            transform: scale(1.2);
+        }
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<h1>🔥 뉴에너지 이온히팅 투자기업 분석 보고서</h1>
+<p>신규9곳 자동차부품가전 | 분석일: 2025년 10월 25일</p>
+<p class="subtitle">차세대 난방 기술로 단기 주가 상승 기대</p>
+</div>
+<div class="content">
+<!-- TOP 3 추천 -->
+<div class="section">
+<h2 class="section-title">최우선 추천 TOP 3</h2>
+<div class="top3-container">
+<div class="top3-card" style="position: relative;">
+<div class="top3-rank">1</div>
+<h3>한온시스템</h3>
+<div class="code">A018880</div>
+<div class="industry">자동차 열관리 시스템</div>
+<div style="margin: 15px 0;">
+<div>시가총액: <strong>2조 8,000억원</strong></div>
+<div>현금자산: <strong>8,000억원</strong></div>
+<div class="stars">⭐⭐⭐⭐⭐</div>
+</div>
+<div class="highlight">
+<strong>🎯 완벽한 시너지:</strong> 자동차 냉난방 전문 기업으로 이온히팅 기술과 직접 연계. 전기차 배터리 열관리 + 실내 난방 솔루션 통합 가능.
+                        </div>
+</div>
+<div class="top3-card" style="position: relative;">
+<div class="top3-rank">2</div>
+<h3>서연이화</h3>
+<div class="code">A200880</div>
+<div class="industry">자동차 내장재</div>
+<div style="margin: 15px 0;">
+<div>시가총액: <strong>3,500억원</strong></div>
+<div>현금자산: <strong>1,200억원</strong></div>
+<div class="stars">⭐⭐⭐⭐⭐</div>
+</div>
+<div class="highlight">
+<strong>🎯 프리미엄 전략:</strong> 이온히팅 적용 난방 내장재로 고급차 시장 공략. 난방 도어트림, 콘솔박스로 차별화.
+                        </div>
+</div>
+<div class="top3-card" style="position: relative;">
+<div class="top3-rank">3</div>
+<h3>만도</h3>
+<div class="code">A204320</div>
+<div class="industry">자동차 부품</div>
+<div style="margin: 15px 0;">
+<div>시가총액: <strong>2조 5,000억원</strong></div>
+<div>현금자산: <strong>1조원 이상</strong></div>
+<div class="stars">⭐⭐⭐⭐⭐</div>
+</div>
+<div class="highlight">
+<strong>🎯 글로벌 공급:</strong> 전기차 난방 시스템 글로벌 OEM 공급망 확보. 배터리 효율 향상 핵심 기술.
+                        </div>
+</div>
+</div>
+</div>
+<!-- 추천 기업 상세 -->
+<div class="section">
+<h2 class="section-title">추천 기업 상세 분석 (10곳)</h2>
+<!-- 1. 한온시스템 -->
+<div class="company-card">
+<div class="company-header">
+<div class="company-name">1. 한온시스템 (A018880)</div>
+<div class="company-rank rank-top">⭐⭐⭐⭐⭐ 최우선 추천</div>
+</div>
+<div class="company-info">
+<div class="info-item">
+<div class="info-label">업종</div>
+<div class="info-value">자동차 열관리 시스템</div>
+</div>
+<div class="info-item">
+<div class="info-label">시가총액</div>
+<div class="info-value">2조 8,000억원</div>
+</div>
+<div class="info-item">
+<div class="info-label">매출액</div>
+<div class="info-value">7조 5,000억원</div>
+</div>
+<div class="info-item">
+<div class="info-label">현금성 자산</div>
+<div class="info-value">약 8,000억원</div>
+</div>
+</div>
+<div class="analysis-section">
+<div class="analysis-title">적합도 분석</div>
+<div class="analysis-content">
+<div class="analysis-item">✅ 자동차 공조·냉난방 전문 기업</div>
+<div class="analysis-item">✅ <strong>이온히팅과 직접 시너지</strong> (열관리 기술)</div>
+<div class="analysis-item">✅ 전기차 배터리 열관리 수요 증가</div>
+<div class="analysis-item">✅ 글로벌 시장 진출 기반 탄탄</div>
+<div class="analysis-item">✅ 전통 사업 성장 둔화로 신기술 필요</div>
+</div>
+</div>
+<div class="highlight-box">
+<h3>🎯 투자 포인트</h3>
+<p><strong>최우선 추천!</strong> 이온히팅 기술로 전기차 난방 혁신, 배터리 소모 최소화. 전기차 겨울철 주행거리 50% 감소 문제 해결 핵심 기술.</p>
+<p style="margin-top: 10px;"><strong>예상 효과:</strong> 신사업 발표 시 주가 10-30% 상승, 3년 내 5,000억원 매출 추가</p>
+</div>
+</div>
+<!-- 2. 서연이화 -->
+<div class="company-card">
+<div class="company-header">
+<div class="company-name">2. 서연이화 (A200880)</div>
+<div class="company-rank rank-top">⭐⭐⭐⭐⭐ 최우선 추천</div>
+</div>
+<div class="company-info">
+<div class="info-item">
+<div class="info-label">업종</div>
+<div class="info-value">자동차 내장재</div>
+</div>
+<div class="info-item">
+<div class="info-label">시가총액</div>
+<div class="info-value">3,500억원</div>
+</div>
+<div class="info-item">
+<div class="info-label">매출액</div>
+<div class="info-value">1조 8,000억원</div>
+</div>
+<div class="info-item">
+<div class="info-label">현금성 자산</div>
+<div class="info-value">약 1,200억원</div>
+</div>
+</div>
+<div class="analysis-section">
+<div class="analysis-title">적합도 분석</div>
+<div class="analysis-content">
+<div class="analysis-item">✅ 자동차 내장재 1위 기업</div>
+<div class="analysis-item">✅ <strong>이온히팅 내장재 결합</strong> (난방 도어, 암레스트)</div>
+<div class="analysis-item">✅ 프리미엄 자동차 납품 경험</div>
+<div class="analysis-item">✅ 차별화 기술 필요</div>
+<div class="analysis-item">✅ 전기차 실내 난방 수요 증가</div>
+</div>
+</div>
+<div class="highlight-box">
+<h3>🎯 투자 포인트</h3>
+<p>이온히팅 적용 프리미엄 내장재 개발 → 글로벌 유일 기술 확보. 난방 도어트림, 콘솔박스, 암레스트로 고급차 시장 선점.</p>
+<p style="margin-top: 10px;"><strong>예상 효과:</strong> 프리미엄 기술 발표 시 주가 20-40% 상승, 3년 내 3,000억원 매출 추가</p>
+</div>
+</div>
+<!-- 3. 만도 -->
+<div class="company-card">
+<div class="company-header">
+<div class="company-name">3. 만도 (A204320)</div>
+<div class="company-rank rank-top">⭐⭐⭐⭐⭐ 최우선 추천</div>
+</div>
+<div class="company-info">
+<div class="info-item">
+<div class="info-label">업종</div>
+<div class="info-value">자동차 부품 제조</div>
+</div>
+<div class="info-item">
+<div class="info-label">시가총액</div>
+<div class="info-value">2조 5,000억원</div>
+</div>
+<div class="info-item">
+<div class="info-label">매출액</div>
+<div class="info-value">7조 2,000억원</div>
+</div>
+<div class="info-item">
+<div class="info-label">현금성 자산</div>
+<div class="info-value">1조원 이상</div>
+</div>
+</div>
+<div class="analysis-section">
+<div class="analysis-title">적합도 분석</div>
+<div class="analysis-content">
+<div class="analysis-item">✅ 대형 상장사, 충분한 투자 여력</div>
+<div class="analysis-item">✅ 내연기관 → 전기차 전환으로 사업 재편 필요</div>
+<div class="analysis-item">✅ 신사업 포트폴리오 다각화 추진 중</div>
+<div class="analysis-item">✅ 이온히팅 → 자동차 난방 시스템 적용</div>
+<div class="analysis-item">⚠️ 현대차 의존도 높음</div>
+</div>
+</div>
+<div class="highlight-box">
+<h3>🎯 투자 포인트</h3>
+<p>전기차 실내 난방 문제 해결 → 배터리 효율 향상 → 글로벌 OEM 공급. 현대·기아·GM·폭스바겐 납품 가능.</p>
+</div>
+</div>
+<!-- 4. 현대위아 -->
+<div class="company-card">
+<div class="company-header">
+<div class="company-name">4. 현대위아 (A011210)</div>
+<div class="company-rank">⭐⭐⭐⭐⭐</div>
+</div>
+<div class="company-info">
+<div class="info-item">
+<div class="info-label">업종</div>
+<div class="info-value">자동차 부품 및 공작기계</div>
+</div>
+<div class="info-item">
+<div class="info-label">시가총액</div>
+<div class="info-value">2조 2,000억원</div>
+</div>
+<div class="info-item">
+<div class="info-label">매출액</div>
+<div class="info-value">7조원</div>
+</div>
+<div class="info-item">
+<div class="info-label">현금성 자산</div>
+<div class="info-value">약 5,000억원</div>
+</div>
+</div>
+<div class="analysis-section">
+<div class="analysis-title">적합도 분석</div>
+<div class="analysis-content">
+<div class="analysis-item">✅ 현대차 그룹 계열사</div>
+<div class="analysis-item">✅ 자동차 부품 + 산업기계 투트랙</div>
+<div class="analysis-item">✅ 전기차 부품 전환 필요성</div>
+<div class="analysis-item">✅ 이온히팅 → 차량 난방, 산업용 적용</div>
+<div class="analysis-item">✅ 충분한 R&amp;D 투자 역량</div>
+</div>
+</div>
+<div class="highlight-box">
+<h3>🎯 투자 포인트</h3>
+<p>자동차 + 산업기계 이중 시장 공략 가능. 산업용 이온히팅 시스템 확장 가능성.</p>
+</div>
+</div>
+<!-- 5. 평화정공 -->
+<div class="company-card">
+<div class="company-header">
+<div class="company-name">5. 평화정공 (A032800)</div>
+<div class="company-rank">⭐⭐⭐⭐</div>
+</div>
+<div class="company-info">
+<div class="info-item">
+<div class="info-label">업종</div>
+<div class="info-value">자동차 시트 제조</div>
+</div>
+<div class="info-item">
+<div class="info-label">시가총액</div>
+<div class="info-value">2,800억원</div>
+</div>
+<div class="info-item">
+<div class="info-label">매출액</div>
+<div class="info-value">1조 2,000억원</div>
+</div>
+<div class="info-item">
+<div class="info-label">현금성 자산</div>
+<div class="info-value">약 800억원</div>
+</div>
+</div>
+<div class="analysis-section">
+<div class="analysis-title">적합도 분석</div>
+<div class="analysis-content">
+<div class="analysis-item">✅ 자동차 시트 전문 (난방 시트 기술 보유)</div>
+<div class="analysis-item">✅ <strong>이온히팅 시트 적용 시 혁신</strong></div>
+<div class="analysis-item">✅ 매출 성장 정체</div>
+<div class="analysis-item">✅ 신기술 투자로 차별화 필요</div>
+<div class="analysis-item">✅ 전기차 시트 난방 효율 개선 수요</div>
+</div>
+</div>
+<div class="highlight-box">
+<h3>🎯 투자 포인트</h3>
+<p>기존 난방 시트 → 이온히팅 시트로 업그레이드. 전기 소모량 50% 절감으로 전기차 겨울 주행거리 개선.</p>
+</div>
+</div>
+<!-- 6. 대동기어 -->
+<div class="company-card">
+<div class="company-header">
+<div class="company-name">6. 대동기어 (A008830)</div>
+<div class="company-rank">⭐⭐⭐⭐</div>
+</div>
+<div class="company-info">
+<div class="info-item">
+<div class="info-label">업종</div>
+<div class="info-value">자동차 변속기 부품</div>
+</div>
+<div class="info-item">
+<div class="info-label">시가총액</div>
+<div class="info-value">2,200억원</div>
+</div>
+<div class="info-item">
+<div class="info-label">매출액</div>
+<div class="info-value">6,500억원</div>
+</div>
+<div class="info-item">
+<div class="info-label">현금성 자산</div>
+<div class="info-value">약 400억원</div>
+</div>
+</div>
+<div class="analysis-section">
+<div class="analysis-title">적합도 분석</div>
+<div class="analysis-content">
+<div class="analysis-item">✅ 전통 부품사, 전기차 시대 사업 전환 필요</div>
+<div class="analysis-item">✅ 현금흐름 안정적</div>
+<div class="analysis-item">✅ 신사업 돌파구 절실</div>
+<div class="analysis-item">✅ 이온히팅 → 차량 부품 다각화</div>
+<div class="analysis-item">⚠️ 전기차는 변속기 불필요 (사업 위기)</div>
+</div>
+</div>
+<div class="highlight-box">
+<h3>🎯 투자 포인트</h3>
+<p><strong>긴급한 신사업 필요!</strong> 변속기 수요 감소로 이온히팅으로 사업 재편 절실. 투자 의지 높을 것으로 예상.</p>
+</div>
+</div>
+<!-- 7. 대유위니아 -->
+<div class="company-card">
+<div class="company-header">
+<div class="company-name">7. 대유위니아 (A115160)</div>
+<div class="company-rank">⭐⭐⭐⭐</div>
+</div>
+<div class="company-info">
+<div class="info-item">
+<div class="info-label">업종</div>
+<div class="info-value">가전제품</div>
+</div>
+<div class="info-item">
+<div class="info-label">시가총액</div>
+<div class="info-value">2,500억원</div>
+</div>
+<div class="info-item">
+<div class="info-label">매출액</div>
+<div class="info-value">8,000억원</div>
+</div>
+<div class="info-item">
+<div class="info-label">현금성 자산</div>
+<div class="info-value">약 600억원</div>
+</div>
+</div>
+<div class="analysis-section">
+<div class="analysis-title">적합도 분석</div>
+<div class="analysis-content">
+<div class="analysis-item">✅ 가전 냉난방 기술 보유</div>
+<div class="analysis-item">✅ <strong>이온히팅 → 난방기기, 온수기 적용</strong></div>
+<div class="analysis-item">✅ 매출 성장 정체</div>
+<div class="analysis-item">✅ 프리미엄 라인 필요</div>
+<div class="analysis-item">✅ 에너지 효율 강화 트렌드</div>
+</div>
+</div>
+<div class="highlight-box">
+<h3>🎯 투자 포인트</h3>
+<p>이온히팅 난방기 출시 → 에너지 효율 1등급. 겨울 난방비 50% 절감 제품으로 시장 선점.</p>
+</div>
+</div>
+<!-- 8. 한국단자 -->
+<div class="company-card">
+<div class="company-header">
+<div class="company-name">8. 한국단자 (A025540)</div>
+<div class="company-rank">⭐⭐⭐⭐</div>
+</div>
+<div class="company-info">
+<div class="info-item">
+<div class="info-label">업종</div>
+<div class="info-value">전기·전자 커넥터</div>
+</div>
+<div class="info-item">
+<div class="info-label">시가총액</div>
+<div class="info-value">3,000억원</div>
+</div>
+<div class="info-item">
+<div class="info-label">매출액</div>
+<div class="info-value">1조 1,000억원</div>
+</div>
+<div class="info-item">
+<div class="info-label">현금성 자산</div>
+<div class="info-value">약 1,000억원</div>
+</div>
+</div>
+<div class="analysis-section">
+<div class="analysis-title">적합도 분석</div>
+<div class="analysis-content">
+<div class="analysis-item">✅ 전기 접속 기술 전문</div>
+<div class="analysis-item">✅ 이온히팅 전력 공급 커넥터</div>
+<div class="analysis-item">✅ 자동차 + 가전 고객 기반</div>
+<div class="analysis-item">✅ 매출 정체, 신제품 필요</div>
+<div class="analysis-item">✅ 전기차 부품 확대 기회</div>
+</div>
+</div>
+<div class="highlight-box">
+<h3>🎯 투자 포인트</h3>
+<p>이온히팅 전용 커넥터·전력 공급 시스템 개발. 표준 부품 공급사로 시장 확대.</p>
+</div>
+</div>
+<!-- 9. 삼화콘덴서 -->
+<div class="company-card">
+<div class="company-header">
+<div class="company-name">9. 삼화콘덴서 (A001820)</div>
+<div class="company-rank">⭐⭐⭐⭐</div>
+</div>
+<div class="company-info">
+<div class="info-item">
+<div class="info-label">업종</div>
+<div class="info-value">콘덴서, 전자부품</div>
+</div>
+<div class="info-item">
+<div class="info-label">시가총액</div>
+<div class="info-value">2,100억원</div>
+</div>
+<div class="info-item">
+<div class="info-label">매출액</div>
+<div class="info-value">4,500억원</div>
+</div>
+<div class="info-item">
+<div class="info-label">현금성 자산</div>
+<div class="info-value">약 800억원</div>
+</div>
+</div>
+<div class="analysis-section">
+<div class="analysis-title">적합도 분석</div>
+<div class="analysis-content">
+<div class="analysis-item">✅ 전자부품 제조 기술</div>
+<div class="analysis-item">✅ 이온히팅 전력 변환·안정화 부품</div>
+<div class="analysis-item">✅ 전통 산업, 성장 한계</div>
+<div class="analysis-item">✅ 신규 응용 분야 필요</div>
+<div class="analysis-item">✅ 자금 여력 충분</div>
+</div>
+</div>
+<div class="highlight-box">
+<h3>🎯 투자 포인트</h3>
+<p>이온히팅 시스템 전력 안정화 부품 공급. 핵심 부품사로 포지셔닝.</p>
+</div>
+</div>
+<!-- 10. 쌍용C&E -->
+<div class="company-card">
+<div class="company-header">
+<div class="company-name">10. 쌍용C&amp;E (A003410)</div>
+<div class="company-rank">⭐⭐⭐⭐</div>
+</div>
+<div class="company-info">
+<div class="info-item">
+<div class="info-label">업종</div>
+<div class="info-value">시멘트, 레미콘</div>
+</div>
+<div class="info-item">
+<div class="info-label">시가총액</div>
+<div class="info-value">4,500억원</div>
+</div>
+<div class="info-item">
+<div class="info-label">매출액</div>
+<div class="info-value">1조 5,000억원</div>
+</div>
+<div class="info-item">
+<div class="info-label">현금성 자산</div>
+<div class="info-value">약 2,000억원</div>
+</div>
+</div>
+<div class="analysis-section">
+<div class="analysis-title">적합도 분석</div>
+<div class="analysis-content">
+<div class="analysis-item">✅ <strong>현금 보유액 매우 풍부</strong> (2,000억)</div>
+<div class="analysis-item">✅ 시멘트 산업 성장 한계</div>
+<div class="analysis-item">✅ 신사업 다각화 절실</div>
+<div class="analysis-item">✅ 이온히팅 → 건물 난방, 산업용 활용</div>
+<div class="analysis-item">⚠️ 건설 관련성 (조건 검토 필요)</div>
+</div>
+</div>
+<div class="highlight-box">
+<h3>🎯 투자 포인트</h3>
+<p>현금 풍부, 신사업 투자 의지 강함. 건물 난방 시스템, 산업용 가열 시스템 시장 진출 가능.</p>
+</div>
+</div>
+</div>
+<!-- 투자 제안 구조 -->
+<div class="section">
+<h2 class="section-title">투자 제안 구조</h2>
+<!-- 한온시스템 제안 -->
+<div class="proposal-card">
+<h4>🎯 한온시스템 맞춤 제안</h4>
+<div class="proposal-section">
+<h5>📋 제안 개요</h5>
+<ul>
+<li><strong>투자 금액:</strong> 500억원</li>
+<li><strong>지분 비율:</strong> 협의 (약 1.8%, 시총 2.8조 기준)</li>
+<li><strong>사업 구조:</strong> 합작법인 설립</li>
+<li><strong>사업 내용:</strong> 전기차용 이온히팅 난방 시스템</li>
+</ul>
+</div>
+<div class="proposal-section">
+<h5>💼 비즈니스 모델</h5>
+<ul>
+<li>전기차 실내 난방 시스템 (배터리 소모 ↓50%)</li>
+<li>배터리 열관리 시스템 (안전성 ↑)</li>
+<li>글로벌 OEM 공급 (현대·기아·GM·폭스바겐)</li>
+</ul>
+</div>
+<div class="proposal-section">
+<h5>📈 기대 효과</h5>
+<ul>
+<li><strong>주가:</strong> 신사업 발표 → 10-30% 상승 예상</li>
+<li><strong>매출:</strong> 3년 내 5,000억원 추가 (전기차 보급률 증가)</li>
+<li><strong>기술:</strong> 차세대 난방 기술 선점</li>
+</ul>
+</div>
+</div>
+<!-- 서연이화 제안 -->
+<div class="proposal-card" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+<h4>🎯 서연이화 맞춤 제안</h4>
+<div class="proposal-section">
+<h5>📋 제안 개요</h5>
+<ul>
+<li><strong>투자 금액:</strong> 500억원</li>
+<li><strong>지분 비율:</strong> 약 14% (시총 3,500억)</li>
+<li><strong>사업 구조:</strong> 전략적 투자 + 공동 개발</li>
+<li><strong>사업 내용:</strong> 이온히팅 적용 프리미엄 내장재</li>
+</ul>
+</div>
+<div class="proposal-section">
+<h5>💼 비즈니스 모델</h5>
+<ul>
+<li>난방 도어트림 (손잡이·팔걸이 난방)</li>
+<li>난방 콘솔박스 (컵홀더·센터패드)</li>
+<li>난방 시트백 (서연이화 ↔ 시트업체 협업)</li>
+</ul>
+</div>
+<div class="proposal-section">
+<h5>📈 기대 효과</h5>
+<ul>
+<li><strong>주가:</strong> 프리미엄 기술 → 20-40% 상승</li>
+<li><strong>매출:</strong> 고급차 옵션 적용 → 3,000억원 추가</li>
+<li><strong>차별화:</strong> 글로벌 유일 이온히팅 내장재</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- 접촉 실행 계획 -->
+<div class="section">
+<h2 class="section-title">접촉 우선순위 및 실행 계획</h2>
+<div class="timeline">
+<div class="timeline-item">
+<h4>1단계: 즉시 접촉 (이번 주)</h4>
+<ol>
+<li><strong>한온시스템</strong> - IR팀 연락, 기술 협업 제안</li>
+<li><strong>서연이화</strong> - 경영진 미팅, 프리미엄 전략 제시</li>
+<li><strong>만도</strong> - 신사업팀 접촉, 전기차 난방 솔루션 제안</li>
+</ol>
+</div>
+<div class="timeline-item">
+<h4>2단계: 추가 접촉 (2주 내)</h4>
+<ol start="4">
+<li>현대위아 - 산업용 적용 가능성 논의</li>
+<li>평화정공 - 이온히팅 시트 기술 제안</li>
+<li>대유위니아 - 가전 난방기기 협업 제안</li>
+</ol>
+</div>
+<div class="timeline-item">
+<h4>3단계: 예비 후보 (1개월 내)</h4>
+<ol start="7">
+<li>한국단자 - 전력 공급 시스템 부품 협력</li>
+<li>삼화콘덴서 - 전력 안정화 부품 공급</li>
+<li>대동기어 - 신사업 전환 긴급 제안</li>
+<li>쌍용C&amp;E - 건물·산업용 난방 시장 진출</li>
+</ol>
+</div>
+</div>
+</div>
+<!-- 핵심 메시지 -->
+<div class="section">
+<h2 class="section-title">이온히팅시스템 핵심 메시지</h2>
+<div class="message-box">
+<div class="message-item">
+<h4>🚗 자동차 부품사 대상</h4>
+<blockquote>
+                            "전기차 최대 약점인 겨울철 주행거리 감소 문제를 해결합니다.<br/>
+                            기존 PTC 히터 대비 전력 소모 50% 절감, 배터리 효율 극대화"
+                        </blockquote>
+</div>
+<div class="message-item">
+<h4>🏠 가전·전자 부품사 대상</h4>
+<blockquote>
+                            "에너지 효율 1등급 난방기기 개발 가능<br/>
+                            탄소중립 시대의 친환경 난방 솔루션"
+                        </blockquote>
+</div>
+<div class="message-item">
+<h4>🏭 전통 제조업 대상</h4>
+<blockquote>
+                            "성장 정체를 돌파할 차세대 기술<br/>
+                            500억 투자로 신시장 창출, 주가 재평가 기회"
+                        </blockquote>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

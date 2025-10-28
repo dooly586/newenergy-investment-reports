@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뉴에너지 이온히팅 투자기업 분석 대시보드</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Malgun Gothic', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .stat-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 3em;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: 1.1em;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .search-box {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.1em;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            transition: border-color 0.3s;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .reports-grid {
+            display: grid;
+            gap: 20px;
+        }
+
+        .report-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-left: 5px solid #667eea;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .report-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+        }
+
+        .report-date {
+            text-align: center;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 8px;
+            color: white;
+            min-width: 120px;
+        }
+
+        .report-date-day {
+            font-size: 2em;
+            font-weight: 700;
+        }
+
+        .report-date-month {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        .report-info {
+            flex: 1;
+        }
+
+        .report-title {
+            font-size: 1.4em;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        .report-meta {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .report-badge {
+            display: inline-block;
+            padding: 5px 12px;
+            background: #f0f0f0;
+            border-radius: 15px;
+            font-size: 0.85em;
+            margin-right: 8px;
+            margin-top: 8px;
+        }
+
+        .report-action {
+            text-align: center;
+        }
+
+        .btn-view {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .btn-view:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 60px 20px;
+            background: white;
+            border-radius: 12px;
+            color: #999;
+            font-size: 1.2em;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: white;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .report-card {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .report-date {
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🔥 뉴에너지 이온히팅 투자기업 분석 대시보드</h1>
+        <p>모든 분석 보고서를 한눈에 확인하세요</p>
+    </div>
+
+    <div class="container">
+        <!-- 통계 카드 -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">7</div>
+                <div class="stat-label">📊 총 분석 보고서</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">49</div>
+                <div class="stat-label">🏢 분석된 기업</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">7</div>
+                <div class="stat-label">📁 분석 카테고리</div>
+            </div>
+        </div>
+
+        <!-- 검색 박스 -->
+        <div class="search-box">
+            <input type="text" id="searchInput" class="search-input" placeholder="🔍 보고서 검색 (날짜, 카테고리, 회사명...)">
+        </div>
+
+        <!-- 보고서 목록 -->
+        <div class="reports-grid" id="reportsList">
+
+            <div class="report-card" data-search="2025년 10월 26일 13:36:01 신규10곳_시멘트제지 뉴에너지 이온히팅 투자기업 분석 보고서 - 신규10곳 시멘트제지">
+                <div class="report-date">
+                    <div class="report-date-month">10월 26일</div>
+                    <div class="report-date-day">13:36:01</div>
+                </div>
+                <div class="report-info">
+                    <div class="report-title">뉴에너지 이온히팅 투자기업 분석 보고서 - 신규10곳 시멘트제지</div>
+                    <div class="report-meta">
+                        📅 2025년 10월 26일 13:36:01
+                        <span class="report-badge">🏢 0개 기업</span>
+                        <span class="report-badge">📂 신규10곳_시멘트제지</span>
+                    </div>
+                </div>
+                <div class="report-action">
+                    <a href="20251026_133601_신규10곳_시멘트제지.html" class="btn-view" target="_blank">보고서 열기 →</a>
+                </div>
+            </div>
+
+            <div class="report-card" data-search="2025년 10월 26일 13:20:43 신규2곳_오산화성지역 뉴에너지 이온히팅 투자기업 분석 보고서 - 신규2곳 오산화성지역">
+                <div class="report-date">
+                    <div class="report-date-month">10월 26일</div>
+                    <div class="report-date-day">13:20:43</div>
+                </div>
+                <div class="report-info">
+                    <div class="report-title">뉴에너지 이온히팅 투자기업 분석 보고서 - 신규2곳 오산화성지역</div>
+                    <div class="report-meta">
+                        📅 2025년 10월 26일 13:20:43
+                        <span class="report-badge">🏢 0개 기업</span>
+                        <span class="report-badge">📂 신규2곳_오산화성지역</span>
+                    </div>
+                </div>
+                <div class="report-action">
+                    <a href="20251026_132043_신규2곳_오산화성지역.html" class="btn-view" target="_blank">보고서 열기 →</a>
+                </div>
+            </div>
+
+            <div class="report-card" data-search="2025년 10월 25일 10:11:36 신규9곳_매출장기정체 뉴에너지 이온히팅 투자기업 분석 보고서 - 신규9곳 매출장기정체">
+                <div class="report-date">
+                    <div class="report-date-month">10월 25일</div>
+                    <div class="report-date-day">10:11:36</div>
+                </div>
+                <div class="report-info">
+                    <div class="report-title">뉴에너지 이온히팅 투자기업 분석 보고서 - 신규9곳 매출장기정체</div>
+                    <div class="report-meta">
+                        📅 2025년 10월 25일 10:11:36
+                        <span class="report-badge">🏢 9개 기업</span>
+                        <span class="report-badge">📂 신규9곳_매출장기정체</span>
+                    </div>
+                </div>
+                <div class="report-action">
+                    <a href="20251025_101136_신규9곳_매출장기정체.html" class="btn-view" target="_blank">보고서 열기 →</a>
+                </div>
+            </div>
+
+            <div class="report-card" data-search="2025년 10월 25일 09:42:25 신규10곳_스마트팜양식장 뉴에너지 이온히팅 투자기업 분석 보고서 - 신규10곳 스마트팜양식장">
+                <div class="report-date">
+                    <div class="report-date-month">10월 25일</div>
+                    <div class="report-date-day">09:42:25</div>
+                </div>
+                <div class="report-info">
+                    <div class="report-title">뉴에너지 이온히팅 투자기업 분석 보고서 - 신규10곳 스마트팜양식장</div>
+                    <div class="report-meta">
+                        📅 2025년 10월 25일 09:42:25
+                        <span class="report-badge">🏢 10개 기업</span>
+                        <span class="report-badge">📂 신규10곳_스마트팜양식장</span>
+                    </div>
+                </div>
+                <div class="report-action">
+                    <a href="20251025_094225_신규10곳_스마트팜양식장.html" class="btn-view" target="_blank">보고서 열기 →</a>
+                </div>
+            </div>
+
+            <div class="report-card" data-search="2025년 10월 25일 09:32:47 신규10곳_전자부품자동차 뉴에너지 이온히팅 투자기업 분석 보고서 - 신규10곳 전자부품자동차">
+                <div class="report-date">
+                    <div class="report-date-month">10월 25일</div>
+                    <div class="report-date-day">09:32:47</div>
+                </div>
+                <div class="report-info">
+                    <div class="report-title">뉴에너지 이온히팅 투자기업 분석 보고서 - 신규10곳 전자부품자동차</div>
+                    <div class="report-meta">
+                        📅 2025년 10월 25일 09:32:47
+                        <span class="report-badge">🏢 10개 기업</span>
+                        <span class="report-badge">📂 신규10곳_전자부품자동차</span>
+                    </div>
+                </div>
+                <div class="report-action">
+                    <a href="20251025_093247_신규10곳_전자부품자동차.html" class="btn-view" target="_blank">보고서 열기 →</a>
+                </div>
+            </div>
+
+            <div class="report-card" data-search="2025년 10월 25일 08:47:44 신규9곳_자동차부품가전 뉴에너지 이온히팅 투자기업 분석 보고서 - 신규9곳 자동차부품가전">
+                <div class="report-date">
+                    <div class="report-date-month">10월 25일</div>
+                    <div class="report-date-day">08:47:44</div>
+                </div>
+                <div class="report-info">
+                    <div class="report-title">뉴에너지 이온히팅 투자기업 분석 보고서 - 신규9곳 자동차부품가전</div>
+                    <div class="report-meta">
+                        📅 2025년 10월 25일 08:47:44
+                        <span class="report-badge">🏢 10개 기업</span>
+                        <span class="report-badge">📂 신규9곳_자동차부품가전</span>
+                    </div>
+                </div>
+                <div class="report-action">
+                    <a href="20251025_084744_신규9곳_자동차부품가전.html" class="btn-view" target="_blank">보고서 열기 →</a>
+                </div>
+            </div>
+
+            <div class="report-card" data-search="2025년 10월 25일 01:08:36 신규10곳_전자부품자동차부품 뉴에너지 이온히팅 투자기업 분석 보고서 - 신규10곳 전자부품자동차부품">
+                <div class="report-date">
+                    <div class="report-date-month">10월 25일</div>
+                    <div class="report-date-day">01:08:36</div>
+                </div>
+                <div class="report-info">
+                    <div class="report-title">뉴에너지 이온히팅 투자기업 분석 보고서 - 신규10곳 전자부품자동차부품</div>
+                    <div class="report-meta">
+                        📅 2025년 10월 25일 01:08:36
+                        <span class="report-badge">🏢 10개 기업</span>
+                        <span class="report-badge">📂 신규10곳_전자부품자동차부품</span>
+                    </div>
+                </div>
+                <div class="report-action">
+                    <a href="20251025_010836_신규10곳_전자부품자동차부품.html" class="btn-view" target="_blank">보고서 열기 →</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="no-results" id="noResults" style="display: none;">
+            검색 결과가 없습니다.
+        </div>
+    </div>
+
+    <div class="footer">
+        <p><strong>뉴에너지(주) 이온히팅 시스템 투자 분석</strong></p>
+        <p>마지막 업데이트: 2025년 10월 28일 13:43</p>
+    </div>
+
+    <script>
+        // 검색 기능
+        const searchInput = document.getElementById('searchInput');
+        const reportsList = document.getElementById('reportsList');
+        const noResults = document.getElementById('noResults');
+
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            const reportCards = reportsList.querySelectorAll('.report-card');
+            let visibleCount = 0;
+
+            reportCards.forEach(card => {
+                const searchData = card.getAttribute('data-search').toLowerCase();
+                if (searchData.includes(searchTerm)) {
+                    card.style.display = 'grid';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            if (visibleCount === 0) {
+                noResults.style.display = 'block';
+                reportsList.style.display = 'none';
+            } else {
+                noResults.style.display = 'none';
+                reportsList.style.display = 'grid';
+            }
+        });
+    </script>
+</body>
+</html>
